@@ -1,4 +1,4 @@
-from knowledge_model import Base, Knowledge
+from knowledge_model import Base, Knowledge, Student
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -7,6 +7,8 @@ engine = create_engine('sqlite:///knowledge.db')
 Base.metadata.create_all(engine)
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
+
+khorkhe= Student(name="george", year=2)
 
 def add_article():
 	pass
